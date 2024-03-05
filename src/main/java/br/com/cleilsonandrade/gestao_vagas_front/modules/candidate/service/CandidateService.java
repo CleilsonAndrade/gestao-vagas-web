@@ -26,7 +26,7 @@ public class CandidateService {
 
     HttpEntity<Map<String, String>> request = new HttpEntity<>(data, headers);
 
-    var result = restTemplate.postForObject("http://localhost:8080/candidates", request, TokenDto.class);
+    var result = restTemplate.postForObject("http://localhost:8080/candidates/auth", request, TokenDto.class);
 
     return result;
   }
