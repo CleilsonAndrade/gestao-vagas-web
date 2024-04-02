@@ -1,4 +1,4 @@
-package br.com.cleilsonandrade.gestao_vagas_front.modules.candidate.service;
+package br.com.cleilsonandrade.gestaovagasweb.modules.candidate.service;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import br.com.cleilsonandrade.gestao_vagas_front.modules.candidate.dto.TokenDto;
+import br.com.cleilsonandrade.gestaovagasweb.modules.candidate.dto.TokenDto;
 
 @Service
 public class CandidateService {

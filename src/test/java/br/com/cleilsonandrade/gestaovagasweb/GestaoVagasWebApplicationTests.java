@@ -1,10 +1,10 @@
-package br.com.cleilsonandrade.gestao_vagas_front;
+package br.com.cleilsonandrade.gestaovagasweb;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GestaoVagasFrontApplicationTests {
+class GestaoVagasWebApplicationTests {
 
 	@Test
 	void contextLoads() {

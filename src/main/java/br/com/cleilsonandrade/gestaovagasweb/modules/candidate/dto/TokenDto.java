@@ -1,4 +1,4 @@
-package br.com.cleilsonandrade.gestao_vagas_front.modules.candidate.dto;
+package br.com.cleilsonandrade.gestaovagasweb.modules.candidate.dto;
 
 import java.util.List;
 

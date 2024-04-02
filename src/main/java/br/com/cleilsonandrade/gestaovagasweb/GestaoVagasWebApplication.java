@@ -1,13 +1,13 @@
-package br.com.cleilsonandrade.gestao_vagas_front;
+package br.com.cleilsonandrade.gestaovagasweb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GestaoVagasFrontApplication {
+public class GestaoVagasWebApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GestaoVagasFrontApplication.class, args);
+		SpringApplication.run(GestaoVagasWebApplication.class, args);
 	}
 
 }

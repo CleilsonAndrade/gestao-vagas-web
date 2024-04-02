@@ -1,4 +1,4 @@
-package br.com.cleilsonandrade.gestao_vagas_front.security;
+package br.com.cleilsonandrade.gestaovagasweb.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

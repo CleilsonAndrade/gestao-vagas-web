@@ -1,4 +1,4 @@
-package br.com.cleilsonandrade.gestao_vagas_front.modules.candidate.controller;
+package br.com.cleilsonandrade.gestaovagasweb.modules.candidate.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import br.com.cleilsonandrade.gestao_vagas_front.modules.candidate.service.CandidateService;
-import br.com.cleilsonandrade.gestao_vagas_front.modules.candidate.service.ProfileCandidateService;
+import br.com.cleilsonandrade.gestaovagasweb.modules.candidate.service.CandidateService;
+import br.com.cleilsonandrade.gestaovagasweb.modules.candidate.service.ProfileCandidateService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -58,7 +58,7 @@ public class CandidateController {
   @PreAuthorize("hasRole('CANDIDATE')")
   public String profile() {
     Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-    var result = profileCandidateService.execute(authentication.getDetails().toString());
+    profileCandidateService.execute(authentication.getDetails().toString());
 
     return "candidate/profile";
   }

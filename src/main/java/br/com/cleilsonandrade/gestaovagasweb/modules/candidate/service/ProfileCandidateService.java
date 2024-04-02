@@ -1,4 +1,4 @@
-package br.com.cleilsonandrade.gestao_vagas_front.modules.candidate.service;
+package br.com.cleilsonandrade.gestaovagasweb.modules.candidate.service;
 
 import java.util.Map;
 
