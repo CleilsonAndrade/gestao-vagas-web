@@ -61,7 +61,7 @@ Gestão Vagas Web é o cliente web da API: [**Gestão Vagas API**](https://githu
   $ cd ./gestao-vagas-web
 
   # Instalar as dependências:
-  $ mvn clean instal
+  $ mvn clean install
 
   # Executar:
   $ mvn spring-boot:run
