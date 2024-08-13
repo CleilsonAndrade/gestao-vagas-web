@@ -22,9 +22,9 @@ Gestão Vagas Web é o cliente web da API: [**Gestão Vagas API**](https://githu
 - [x] Realizar o cadastro do usuário com perfil de candidato<br>
 - [x] Listar o currículo da usuário com perfil de candidato<br>
 - [x] Listar as vagas disponíveis para o usuário com perfil de candidato por um filtro<br>
+- [x] Aplicar o usuário com perfil de candidato a uma vaga<br>
 - [ ] Realizar o cadastro de um usuário representando a empresa<br>
 - [ ] Cadastro de vaga por um usuário com perfil de empresa<br>
-- [ ] Aplicar o usuário com perfil de candidato a uma vaga<br>
 
 ## Features
 - [x] Requisição a API<br>
