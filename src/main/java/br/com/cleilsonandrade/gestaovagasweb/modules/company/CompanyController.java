@@ -19,6 +19,7 @@ import br.com.cleilsonandrade.gestaovagasweb.modules.company.dto.CreateCompanyDT
 import br.com.cleilsonandrade.gestaovagasweb.modules.company.dto.CreateJobsDTO;
 import br.com.cleilsonandrade.gestaovagasweb.modules.company.service.CreateCompanyService;
 import br.com.cleilsonandrade.gestaovagasweb.modules.company.service.CreateJobsService;
+import br.com.cleilsonandrade.gestaovagasweb.modules.company.service.ListAllJobsCompanyService;
 import br.com.cleilsonandrade.gestaovagasweb.modules.company.service.LoginCompanyService;
 import br.com.cleilsonandrade.gestaovagasweb.utils.FormatErrorMessage;
 import jakarta.servlet.http.HttpSession;
@@ -34,6 +35,9 @@ public class CompanyController {
 
   @Autowired
   CreateJobsService createJobsService;
+
+  @Autowired
+  ListAllJobsCompanyService listAllJobsCompanyService;
 
   @GetMapping("/create")
   public String create(Model model) {
@@ -94,7 +98,25 @@ public class CompanyController {
   @PreAuthorize("hasRole('COMPANY')")
   public String createJobs(CreateJobsDTO jobs) {
     var result = this.createJobsService.execute(jobs, getToken());
-    return "redirect:/company/jobs";
+    return "redirect:/company/jobs/list";
+  }
+
+  @GetMapping("/jobs/list")
+  @PreAuthorize("hasRole('COMPANY')")
+  public String list(Model model) {
+    var result = this.listAllJobsCompanyService.execute(getToken());
+    model.addAttribute("jobs", result);
+    return "company/list";
+  }
+
+  @GetMapping("/logout")
+  public String logout(HttpSession session) {
+    SecurityContextHolder.getContext().setAuthentication(null);
+    SecurityContext securityContext = SecurityContextHolder.getContext();
+    session.setAttribute("SPRING_SECURITY_CONTEXT", securityContext);
+    session.setAttribute("token", null);
+
+    return "redirect:/company/login";
   }
 
   private String getToken() {
