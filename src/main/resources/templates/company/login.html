@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <title>Login Empresa</title>
+</head>
+
+<body class="bg-sky-950 h-screen flex justify-center items-center">
+  <form method="post" th:action="@{/companies/signin}" class="flex gap-24">
+    <div class="text-white max-w-80 text-6xl flex items-center">
+      Gestão Vagas (Empresa)
+    </div>
+    <div class="space-y-8 bg-sky-950 rounded-md p-20">
+      <input type="text" name="username" placeholder="Usuário"
+        class="bg-gray-50 text-gray-900 text-xd rounded w-96 block p-3 focus:outline-none focus:ring-green-600 focus:ring-2">
+      <input type="password" name="password" placeholder="Senha"
+        class="bg-gray-50 text-gray-900 text-xd rounded w-96 block p-3 focus:outline-none focus:ring-green-600 focus:ring-2">
+
+      <p class="text-red-400" th:if="${error_message}" th:text="${error_message}"></p>
+
+      <button class="bg-green-900 w-96 p-4 rounded text-white hover:bg-green-700 transition ease-in-out">Entrar</button>
+      <a href="/companies/create"
+        class="block text-center text-green-700 underline underline-offset-2 hover:text-green-600 transition ease-in-out">Crie
+        sua
+        conta</a>
+    </div>
+  </form>
+</body>
+
+</html>

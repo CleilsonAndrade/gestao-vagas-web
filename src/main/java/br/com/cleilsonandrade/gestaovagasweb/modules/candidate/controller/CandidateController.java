@@ -65,10 +65,10 @@ public class CandidateController {
       session.setAttribute("SPRING_SECURITY_CONTEXT", securityContext);
       session.setAttribute("token", token);
 
-      return "redirect:candidate/profile";
+      return "redirect:/candidate/profile";
     } catch (HttpClientErrorException e) {
       redirectAttributes.addAttribute("error_message", "Usuário/Senha incorreto(s)");
-      return "redirect:candidate/login";
+      return "redirect:/candidate/login";
     }
   }
 
@@ -84,7 +84,7 @@ public class CandidateController {
 
       return "candidate/profile";
     } catch (Exception e) {
-      return "redirect:candidate/login";
+      return "redirect:/candidate/login";
     }
   }
 

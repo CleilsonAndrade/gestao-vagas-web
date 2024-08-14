@@ -9,7 +9,7 @@
 </head>
 
 <body class="bg-sky-950 h-screen flex justify-center items-center">
-  <form method="post" th:object="${company}" id="submitForm" th:action="@{/companys/create}" class="flex gap-24">
+  <form method="post" th:object="${company}" id="submitForm" th:action="@{/companies/create}" class="flex gap-24">
 
     <div class="space-y-8 bg-zinc-900 rounded-md p-10">
       <p class="text-white">Empresa, crie seu cadastro gratuitamente</p>
@@ -47,7 +47,7 @@
         class="bg-green-700 w-full p-4 rounded text-white hover:bg-green-600 transition ease-in-out">Cadastre-se</button>
       <p class="mt-4 text-white">
         Já tem uma conta?
-        <a href="/companys/login"
+        <a href="/companies/login"
           class="block text-center text-green-700 hover:text-green-600 transition ease-in-out">Faça login</a>
       </p>
     </div>

@@ -7,20 +7,25 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import br.com.cleilsonandrade.gestaovagasweb.modules.company.dto.CreateCompanyDTO;
+import br.com.cleilsonandrade.gestaovagasweb.modules.company.dto.CreateJobsDTO;
 
 @Service
-public class CreateCompanyService {
+public class CreateJobsService {
   @Value("${base.url}")
   private String baseUrl;
 
-  public String execute(CreateCompanyDTO createCompanyDTO) {
+  public String execute(CreateJobsDTO jobs, String token) {
     RestTemplate restTemplate = new RestTemplate();
 
     HttpHeaders headers = new HttpHeaders();
-    headers.setContentType(MediaType.APPLICATION_JSON);
 
-    HttpEntity<CreateCompanyDTO> request = new HttpEntity<>(createCompanyDTO, headers);
-    return restTemplate.postForObject(baseUrl + "/companies/create/", request, String.class);
+    headers.setContentType(MediaType.APPLICATION_JSON);
+    headers.setBearerAuth(token);
+
+    HttpEntity<CreateJobsDTO> request = new HttpEntity<>(jobs, headers);
+
+    var result = restTemplate.postForObject(baseUrl + "/companies/jobs/", request, String.class);
+
+    return result;
   }
 }
